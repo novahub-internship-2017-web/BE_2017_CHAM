@@ -1,8 +1,8 @@
 package week3;
 
-public class DemoManage extends ShowManage{
+public class DemoManage {
   public static void main(String[] args) {
-    DemoManage management = new DemoManage();
+   ShowManage  management = new ShowManage();
     management.show(); 
   }
   

@@ -9,8 +9,10 @@ public class Employee extends Person {
   double allowance;
   double coefficientSalary;
   Scanner input = new Scanner(System.in);
+  
   public Employee() {
-    
+	  super();
+	  super.setCareer("NV");
   }
   
   public Employee(String name, int year, String address, double allowance, double coefficientSalary,
@@ -64,37 +66,56 @@ public class Employee extends Person {
   }
   @Override
   public void printInfor() {
-    System.out.printf("%-20s %-10d %-15s %-10s %-15s %-7s %-7s %-7s",this.getName(),this.getYear(),this.getAddress(),
-        this.getPosition(),this.getDepartment(),this.getAllowance(),this.getWorkDay(),this.getCoefficientSalary());
+	  super.printInfor();
+	  System.out.printf("%-10s %-15s %-7s %-7s %-7s",this.getDepartment(),this.getPosition(),
+	            this.getAllowance(),this.getWorkDay(),this.getCoefficientSalary());
   }
   public void inputInfor() {
-    System.out.print("Nhap ten : ");
-    setName(input.nextLine());
-    System.out.print("Nhap nam sinh : ");
-    setYear(input.nextInt());
-    input.nextLine();
-    System.out.print("Nhap que quan : ");
-    setAddress(input.nextLine());
+	super.inputInfor();
     System.out.print("Nhap phong ban : ");
-    this.setDepartment(input.nextLine());
+    this.setDepartment(inputMustString());
     System.out.println("Chon chuc vu : ");
-    System.out.println("\t1.Nhan Vien  2.Pho Phong  3.Truong Phong");
+    System.out.println("\t1.Nhan vien  2.Pho phong  3.Truong phong");
     int choose = input.nextInt();
     if(choose == 1) {
-      this.setPosition("Nhan Vien");
+      this.setPosition("Nhan vien");
     }
     else if(choose == 2) {
-      this.setPosition("Pho Phong");
+      this.setPosition("Pho phong");
     }
     else if(choose == 3) {
-      this.setPosition("Truong Phong");
+      this.setPosition("Truong phong");
     }
     System.out.print("Nhap so ngay cong : ");
-    this.setWorkDay(input.nextInt());
+    this.setWorkDay(inputMustPositiveInt());
     System.out.print("Nhap he so luong : ");
-    this.setCoefficientSalary(input.nextFloat());
+    this.setCoefficientSalary(inputMustPositiveFloat());
     
     this.setAllowance(this.position);
+  }
+  
+  public void edit() {
+	    super.edit();
+	    System.out.print("Nhap phong ban : ");
+	    this.setDepartment(input.nextLine());
+	    System.out.println("Chon chuc vu : ");
+	    System.out.println("\t1.Nhan vien  2.Pho phong  3.Truong phong");
+	    int choose = input.nextInt();
+	    if(choose == 1) {
+	      this.setPosition("Nhan vien");
+	    }
+	    else if(choose == 2) {
+	      this.setPosition("Pho phong");
+	    }
+	    else if(choose == 3) {
+	      this.setPosition("Truong phong");
+	    }
+	    System.out.print("Nhap so ngay cong : ");
+	    this.setWorkDay(inputMustPositiveInt());
+	    System.out.print("Nhap he so luong : ");
+	    this.setCoefficientSalary(inputMustPositiveFloat());
+	    
+	    this.setAllowance(this.position);
   }
   
 }
