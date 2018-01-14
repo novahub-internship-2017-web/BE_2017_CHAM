@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>QuanLyNhanSu</display-name>
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <servlet-name>InforStaff</servlet-name>
+    <servlet-class>com.cham.servlet.InforStaff</servlet-class>
+  </servlet>
+  <servlet>
+    <description></description>
+    <servlet-name>InforTeacher</servlet-name>
+    <servlet-class>com.cham.servlet.InforTeacher</servlet-class>
+  </servlet>
+  <servlet>
+    <description></description>
+    <servlet-name>InforUser</servlet-name>
+    <servlet-class>com.cham.servlet.InforUser</servlet-class>
+  </servlet>
+  <servlet>
+    <description></description>
+    <servlet-name>InforMy</servlet-name>
+    <servlet-class>com.cham.servlet.InforMy</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>InforStaff</servlet-name>
+    <url-pattern>/inforstaff</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InforTeacher</servlet-name>
+    <url-pattern>/inforteacher</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InforMy</servlet-name>
+    <url-pattern>/informy1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InforUser</servlet-name>
+    <url-pattern>/inforuser</url-pattern>
+  </servlet-mapping>
+</web-app>
